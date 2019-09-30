@@ -34,10 +34,12 @@ implementation
 { TForm1 }
 
 function TForm1.Conectar: Boolean;
+var
+  p : string;
 begin
   FDConnection1.Connected := False;
-  FDConnection1.Params.Values['Database'] :=
-    '..\..\DB\DB.db';
+  p := ExtractFilePath('ODA.exe');
+  FDConnection1.Params.Values['Database'] := p+'DB.db';
   FDConnection1.Connected := True;
   Result := True;
 end;
