@@ -37,7 +37,7 @@ function TForm1.Conectar: Boolean;
 begin
   FDConnection1.Connected := False;
   FDConnection1.Params.Values['Database'] :=
-    'C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\DB\DB.db';
+    '..\..\DB\DB.db';
   FDConnection1.Connected := True;
   Result := True;
 end;
