@@ -12,7 +12,7 @@ begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
   Application.CreateForm(TfrmPrincipal, frmPrincipal);
-  Application.CreateForm(TfrmQuiz, frmQuiz);
   Application.CreateForm(TDM, DM);
+  Application.CreateForm(TfrmQuiz, frmQuiz);
   Application.Run;
 end.

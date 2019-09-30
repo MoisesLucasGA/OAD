@@ -13,6 +13,7 @@ object frmPrincipal: TfrmPrincipal
   KeyPreview = True
   OldCreateOrder = False
   OnCanResize = FormCanResize
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object pnlBack: TPanel
@@ -4875,7 +4876,7 @@ object frmPrincipal: TfrmPrincipal
         ParentFont = False
         Layout = tlCenter
       end
-      object Button1: TButton
+      object btnIniciar: TButton
         Left = 68
         Top = 184
         Width = 175
@@ -4883,7 +4884,7 @@ object frmPrincipal: TfrmPrincipal
         Align = alCustom
         Caption = 'Iniciar'
         TabOrder = 0
-        OnClick = Button1Click
+        OnClick = btnIniciarClick
       end
     end
   end

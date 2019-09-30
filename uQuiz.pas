@@ -32,11 +32,12 @@ type
   public
     { Public declarations }
     idQuestao: Integer;
+    qtdQuestao: Integer;
   end;
 
 var
   frmQuiz: TfrmQuiz;
-  
+
 
 implementation
 
@@ -57,15 +58,19 @@ end;
 
 procedure TfrmQuiz.btnProximoClick(Sender: TObject);
 begin
-  Inc(idQuestao);
-  GerarQuestao;
+  if idQuestao < qtdQuestao then
+  begin
+    Inc(idQuestao);
+    GerarQuestao;
+  end;
 end;
 
 procedure TfrmQuiz.Centralizar;
 begin
-  
+
   pnlQuiz.Top := (self.Height div 2) - (pnlQuiz.Height div 2);
   pnlQuiz.Left := (self.Width div 2) - (pnlQuiz.Width div 2);
+
 
 end;
 
@@ -78,7 +83,7 @@ end;
 procedure TfrmQuiz.FormCreate(Sender: TObject);
 begin
 idQuestao := 1;
-//GerarQuestao;
+qtdQuestao := DM.QtdQuestao;
 end;
 
 procedure TfrmQuiz.FormShow(Sender: TObject);
@@ -129,20 +134,11 @@ begin
 end;
 
 procedure TfrmQuiz.GerarQuestao;
-var
-  i : Integer;
 begin
   if DM.Conectar then
     begin
-      DM.ListarQuestao;
+      DM.ListarQuestao(idQuestao);
       DM.FDQuery1.First;
-      if idQuestao <> 1 then
-      begin
-        for i := 1 to idQuestao do
-        begin
-          DM.FDQuery1.Next;
-        end;  
-      end;
       imgTira.Picture.LoadFromFile(DM.FDQuery1.FieldByName('foto').AsString);
       lblEnunciado.Caption := DM.FDQuery1.FieldByName('enunciado').AsString;
       GerarItems;

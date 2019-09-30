@@ -12,12 +12,13 @@ type
     pnlBack: TPanel;
     imgBack: TImage;
     pnlWelcome: TPanel;
-    Button1: TButton;
+    btnIniciar: TButton;
     Label1: TLabel;
     procedure FormCanResize(Sender: TObject; var NewWidth, NewHeight: Integer;
       var Resize: Boolean);
     procedure Centralizar;
-    procedure Button1Click(Sender: TObject);
+    procedure btnIniciarClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -31,7 +32,7 @@ implementation
 
 {$R *.dfm}
 
-procedure TfrmPrincipal.Button1Click(Sender: TObject);
+procedure TfrmPrincipal.btnIniciarClick(Sender: TObject);
 begin
  frmQuiz.Show;
 end;
@@ -46,6 +47,11 @@ procedure TfrmPrincipal.FormCanResize(Sender: TObject; var NewWidth,
   NewHeight: Integer; var Resize: Boolean);
 begin
   Centralizar;
+end;
+
+procedure TfrmPrincipal.FormCreate(Sender: TObject);
+begin
+imgBack.Picture.LoadFromFile('..\..\images\MenuBack.jpg');
 end;
 
 end.

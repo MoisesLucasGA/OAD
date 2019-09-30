@@ -8,19 +8,21 @@ uses
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.SQLite,
   FireDAC.Phys.SQLiteDef, FireDAC.Stan.ExprFuncs, FireDAC.VCLUI.Wait,
   FireDAC.Stan.Param, FireDAC.DatS, FireDAC.DApt.Intf, FireDAC.DApt, Data.DB,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client,System.StrUtils;
 
 type
   TDM = class(TDataModule)
     FDConnection1: TFDConnection;
     FDQuery1: TFDQuery;
+    procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
     function Conectar:Boolean;
     function Desconectar:Boolean;
-    function ListarQuestao:Boolean;
+    function ListarQuestao(idQuestao:Integer):Boolean;
+    function QtdQuestao: Integer;
   end;
 
 var
@@ -37,11 +39,18 @@ implementation
 function TDM.Conectar: Boolean;
 begin
   FDConnection1.Connected := False;
-  FDConnection1.Params.Values['Database'] :=
-    'C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\DB\DB.db';
   FDConnection1.Connected := True;
   Result := True;
+
 end;
+
+procedure TDM.DataModuleCreate(Sender: TObject);
+var   P : String;
+begin
+  P := ExtractFilePath( 'ODA.exe' );
+  FDConnection1.ConnectionString  := AnsiReplaceStr( FDConnection1.ConnectionString , 'DB.db' , P+'DB.db' );
+  end;
+
 
 function TDM.Desconectar: Boolean;
 begin
@@ -49,13 +58,24 @@ begin
   Result := True;
 end;
 
-function TDM.ListarQuestao: Boolean;
+
+function TDM.ListarQuestao(idQuestao: Integer): Boolean;
+begin
+  FDQuery1.Close;
+  FDQuery1.SQL.Clear;
+  FDQuery1.SQL.Add('SELECT * FROM QUESTAO WHERE id = :idQuestao');
+  FDQuery1.ParamByName('idQuestao').AsInteger := idQuestao;
+  FDQuery1.Open();
+  Result := True;
+end;
+
+function TDM.QtdQuestao: Integer;
 begin
   FDQuery1.Close;
   FDQuery1.SQL.Clear;
   FDQuery1.SQL.Add('SELECT * FROM QUESTAO');
   FDQuery1.Open();
-  Result := True;
+  Result := FDQuery1.RowsAffected;
 end;
 
 end.

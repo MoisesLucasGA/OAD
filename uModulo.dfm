@@ -1,5 +1,6 @@
 object DM: TDM
   OldCreateOrder = False
+  OnCreate = DataModuleCreate
   Height = 282
   Width = 550
   object FDConnection1: TFDConnection
@@ -8,7 +9,6 @@ object DM: TDM
         'Database=C:\Users\Mois'#233's Lucas\Documents\Embarcadero\Studio\Proj' +
         'ects\ODA\DB\DB.db'
       'DriverID=sQLite')
-    Connected = True
     LoginPrompt = False
     Left = 416
     Top = 128
