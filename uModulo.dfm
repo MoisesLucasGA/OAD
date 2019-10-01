@@ -7,7 +7,7 @@ object DM: TDM
     Params.Strings = (
       
         'Database=C:\Users\Mois'#233's Lucas\Documents\Embarcadero\Studio\Proj' +
-        'ects\ODA\DB\DB.db'
+        'ects\ODA\Win32\Debug\DB.db'
       'DriverID=sQLite')
     LoginPrompt = False
     Left = 416

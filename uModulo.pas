@@ -45,12 +45,14 @@ begin
 end;
 
 procedure TDM.DataModuleCreate(Sender: TObject);
-var   P : String;
+var
+ path : string;
 begin
-  P := ExtractFilePath( 'ODA.exe' );
-  FDConnection1.ConnectionString  := AnsiReplaceStr( FDConnection1.ConnectionString , 'DB.db' , P+'DB.db' );
-  end;
-
+  FDConnection1.Connected := False;
+  path := ExtractFilePath(ParamStr(0));
+  FDConnection1.Params.Database := path+'DB.db';
+  FDConnection1.Connected := True;
+end;
 
 function TDM.Desconectar: Boolean;
 begin

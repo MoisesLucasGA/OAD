@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
-  Vcl.StdCtrls,uQuiz;
+  Vcl.StdCtrls,uQuiz,uModulo;
 
 type
   TfrmPrincipal = class(TForm)
@@ -52,6 +52,7 @@ end;
 procedure TfrmPrincipal.FormCreate(Sender: TObject);
 begin
 imgBack.Picture.LoadFromFile('..\..\images\MenuBack.jpg');
+ShowMessage(DM.FDConnection1.Params.Database);
 end;
 
 end.
