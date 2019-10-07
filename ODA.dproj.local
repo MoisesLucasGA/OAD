@@ -29,5 +29,5 @@
     <File Path="uModulo.dfm"/>
     <File Path="uQuiz.pas"/>
     <File Path="uQuiz.dfm"/>
-  </ProjectSortOrder>
+  </ProjectSortOrder>  <BT_BuildType>Debug</BT_BuildType>
 </BorlandProject>

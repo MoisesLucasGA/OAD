@@ -52,7 +52,6 @@ end;
 procedure TfrmPrincipal.FormCreate(Sender: TObject);
 begin
 imgBack.Picture.LoadFromFile('..\..\images\MenuBack.jpg');
-ShowMessage(DM.FDConnection1.Params.Database);
 end;
 
 end.

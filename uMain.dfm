@@ -1,9 +1,10 @@
 object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
+  BorderStyle = bsSingle
   Caption = 'Principal'
-  ClientHeight = 464
-  ClientWidth = 707
+  ClientHeight = 474
+  ClientWidth = 717
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -19,15 +20,17 @@ object frmPrincipal: TfrmPrincipal
   object pnlBack: TPanel
     Left = 0
     Top = 0
-    Width = 707
-    Height = 464
+    Width = 717
+    Height = 474
     Align = alClient
     TabOrder = 0
+    ExplicitWidth = 707
+    ExplicitHeight = 464
     object imgBack: TImage
       Left = 1
       Top = 1
-      Width = 705
-      Height = 462
+      Width = 715
+      Height = 472
       Align = alClient
       Picture.Data = {
         0A544A504547496D616765CD590200FFD8FFE000104A46494600010101006000
@@ -4853,15 +4856,17 @@ object frmPrincipal: TfrmPrincipal
     end
     object pnlWelcome: TPanel
       Left = 200
-      Top = 96
-      Width = 305
-      Height = 305
+      Top = 48
+      Width = 313
+      Height = 353
+      Ctl3D = True
       ParentBackground = False
-      ParentColor = True
+      ParentCtl3D = False
+      ShowCaption = False
       TabOrder = 0
       object Label1: TLabel
         Left = 0
-        Top = 17
+        Top = 33
         Width = 303
         Height = 80
         Align = alCustom
@@ -4878,7 +4883,7 @@ object frmPrincipal: TfrmPrincipal
       end
       object btnIniciar: TButton
         Left = 68
-        Top = 184
+        Top = 192
         Width = 175
         Height = 41
         Align = alCustom

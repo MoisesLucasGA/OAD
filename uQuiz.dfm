@@ -1,17 +1,20 @@
 object frmQuiz: TfrmQuiz
   Left = 0
-  Top = 0
+  Top = 25
+  BorderStyle = bsSingle
   Caption = 'Quiz'
-  ClientHeight = 600
-  ClientWidth = 900
+  ClientHeight = 623
+  ClientWidth = 910
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'Tahoma'
   Font.Style = []
+  KeyPreview = True
   OldCreateOrder = False
   Position = poDesigned
+  WindowState = wsMaximized
   OnCanResize = FormCanResize
   OnCreate = FormCreate
   OnShow = FormShow
@@ -20,133 +23,165 @@ object frmQuiz: TfrmQuiz
   object pnlMain: TPanel
     Left = 0
     Top = 0
-    Width = 900
-    Height = 600
+    Width = 910
+    Height = 623
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 749
-    ExplicitHeight = 491
+    ExplicitWidth = 900
+    ExplicitHeight = 613
     object pnlQuiz: TPanel
       Left = 16
       Top = 1
-      Width = 745
-      Height = 552
+      Width = 849
+      Height = 599
       Align = alCustom
       TabOrder = 0
-      object lblEnunciado: TLabel
-        Left = 64
-        Top = 328
-        Width = 585
-        Height = 41
-        AutoSize = False
-        Caption = 'lblEnunciado'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -15
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        WordWrap = True
-      end
-      object imgTira: TImage
-        Left = 88
+      object PageControl1: TPageControl
+        Left = 1
         Top = 1
-        Width = 561
-        Height = 304
-        Align = alCustom
-        Center = True
-        Stretch = True
-      end
-      object rBtnA: TRadioButton
-        Left = 64
-        Top = 375
-        Width = 281
-        Height = 33
-        Caption = 'A)'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
+        Width = 847
+        Height = 597
+        ActivePage = tbQuestao1
+        Align = alClient
         TabOrder = 0
-        WordWrap = True
-      end
-      object rBtnB: TRadioButton
-        Left = 368
-        Top = 375
-        Width = 281
-        Height = 33
-        Caption = 'B)'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 1
-        WordWrap = True
-      end
-      object rBtnC: TRadioButton
-        Left = 64
-        Top = 448
-        Width = 281
-        Height = 33
-        Caption = 'C)'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 2
-        WordWrap = True
-      end
-      object rBtnD: TRadioButton
-        Left = 368
-        Top = 448
-        Width = 281
-        Height = 33
-        Caption = 'D)'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 3
-        WordWrap = True
-      end
-      object btnProximo: TButton
-        Left = 480
-        Top = 508
-        Width = 67
-        Height = 29
-        Caption = 'Pr'#243'xima'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 4
-        OnClick = btnProximoClick
-      end
-      object btnConfirmar: TButton
-        Left = 576
-        Top = 508
-        Width = 73
-        Height = 29
-        Align = alCustom
-        Caption = 'Confirmar'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clWindowText
-        Font.Height = -13
-        Font.Name = 'Tahoma'
-        Font.Style = []
-        ParentFont = False
-        TabOrder = 5
-        OnClick = btnConfirmarClick
+        object tbQuestao1: TTabSheet
+          Caption = 'Quest'#227'o 1'
+          object imgTira: TImage
+            Left = 66
+            Top = 3
+            Width = 713
+            Height = 336
+            Align = alCustom
+            Center = True
+            Proportional = True
+            Transparent = True
+            ExplicitLeft = 63
+            ExplicitTop = 0
+          end
+          object pnlItems: TPanel
+            Left = 0
+            Top = 331
+            Width = 839
+            Height = 238
+            Align = alBottom
+            TabOrder = 0
+            object lblEnunciado: TLabel
+              Left = 63
+              Top = 24
+              Width = 585
+              Height = 41
+              AutoSize = False
+              Caption = 'lblEnunciado'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -15
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              ParentFont = False
+              WordWrap = True
+            end
+            object rBtnA: TRadioButton
+              Left = 63
+              Top = 63
+              Width = 281
+              Height = 33
+              Caption = 'A)'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 0
+              WordWrap = True
+            end
+            object rBtnB: TRadioButton
+              Left = 448
+              Top = 63
+              Width = 281
+              Height = 33
+              Caption = 'B)'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 1
+              WordWrap = True
+            end
+            object rBtnC: TRadioButton
+              Left = 63
+              Top = 120
+              Width = 281
+              Height = 33
+              Caption = 'C)'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 2
+              WordWrap = True
+            end
+            object rBtnD: TRadioButton
+              Left = 448
+              Top = 120
+              Width = 281
+              Height = 33
+              Caption = 'D)'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -12
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 3
+              WordWrap = True
+            end
+            object btnSair: TButton
+              Left = 80
+              Top = 180
+              Width = 75
+              Height = 29
+              Caption = 'Sair'
+              TabOrder = 4
+              OnClick = btnSairClick
+            end
+            object btnProximo: TButton
+              Left = 582
+              Top = 180
+              Width = 75
+              Height = 29
+              Caption = 'Pr'#243'xima'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 5
+              OnClick = btnProximoClick
+            end
+            object btnConfirmar: TButton
+              Left = 701
+              Top = 180
+              Width = 75
+              Height = 29
+              Align = alCustom
+              Caption = 'Confirmar'
+              Font.Charset = DEFAULT_CHARSET
+              Font.Color = clWindowText
+              Font.Height = -13
+              Font.Name = 'Tahoma'
+              Font.Style = []
+              ParentFont = False
+              TabOrder = 6
+              OnClick = btnConfirmarClick
+            end
+          end
+        end
       end
     end
   end
