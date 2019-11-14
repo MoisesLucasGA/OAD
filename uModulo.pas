@@ -14,6 +14,7 @@ type
   TDM = class(TDataModule)
     FDConnection1: TFDConnection;
     FDQuery1: TFDQuery;
+    FDQuery2: TFDQuery;
     procedure DataModuleCreate(Sender: TObject);
   private
     { Private declarations }
@@ -21,8 +22,14 @@ type
     { Public declarations }
     function Conectar:Boolean;
     function Desconectar:Boolean;
-    function ListarQuestao(idQuestao:Integer):Boolean;
+    function BuscarQuestao(idQuestao:Integer):Boolean;
+    function ListarQuestao:Boolean;
     function QtdQuestao: Integer;
+    function InserirUsuario(nome:string):Boolean;
+    function BuscarUsuario(nome:string):Boolean;
+    function BuscarUsuarioID(id:Integer):Boolean;
+    function InserirScore(id:Integer;tempo:TDateTime):Boolean;
+    function BuscarScore:Boolean;
   end;
 
 var
@@ -36,6 +43,38 @@ implementation
 
 { TDM }
 
+function TDM.BuscarScore: Boolean;
+begin
+  FDQuery1.Close;
+  FDQuery1.SQL.Clear;
+  FDQuery1.SQL.Add('SELECT * FROM  SCORE ORDER BY pontuacao LIMIT 10');
+  FDQuery1.Open();
+  result := True;
+end;
+
+function TDM.BuscarUsuario(nome: string): Boolean;
+begin
+  FDQuery1.Close;
+  FDQuery1.SQL.Clear;
+  FDQuery1.SQL.Add('SELECT * FROM USUARIO WHERE nome = :nome');
+  FDQuery1.ParamByName('nome').AsString := nome;
+  FDQuery1.Open();
+  if FDQuery1.RowsAffected > 0 then
+    Result := True
+  else
+    Result := False
+end;
+
+function TDM.BuscarUsuarioID(id: Integer): Boolean;
+begin
+  FDQuery2.Close;
+  FDQuery2.SQL.Clear;
+  FDQuery2.SQL.Add('SELECT * FROM USUARIO WHERE id = :id');
+  FDQuery2.ParamByName('id').AsInteger := id;
+  FDQuery2.Open();
+  Result := True;
+end;
+
 function TDM.Conectar: Boolean;
 begin
   FDConnection1.Connected := False;
@@ -45,12 +84,12 @@ begin
 end;
 
 procedure TDM.DataModuleCreate(Sender: TObject);
-var
- path : string;
+//var
+ //path : string;
 begin
   FDConnection1.Connected := False;
-  path := ExtractFilePath(ParamStr(0));
-  FDConnection1.Params.Database := path+'DB.db';
+  //path := ExtractFilePath(ParamStr(0));
+  FDConnection1.Params.Database := 'DB.db';
   FDConnection1.Connected := True;
 end;
 
@@ -61,7 +100,37 @@ begin
 end;
 
 
-function TDM.ListarQuestao(idQuestao: Integer): Boolean;
+function TDM.InserirScore(id: Integer; tempo: TDateTime): Boolean;
+begin
+  FDQuery1.Close;
+  FDQuery1.SQL.Clear;
+  FDQuery1.SQL.Add('INSERT INTO SCORE(id_usuario,pontuacao) VALUES(:id,:tempo)');
+  FDQuery1.ParamByName('id').AsInteger := id;
+  FDQuery1.ParamByName('tempo').AsTime := tempo;
+  FDQuery1.ExecSQL;
+  Result := True;
+end;
+
+function TDM.InserirUsuario(nome: string): Boolean;
+begin
+  FDQuery1.Close;
+  FDQuery1.SQL.Clear;
+  FDQuery1.SQL.Add('INSERT INTO USUARIO(nome) VALUES(:nome)');
+  FDQuery1.ParamByName('nome').AsString := nome;
+  FDQuery1.ExecSQL;
+  Result := True;
+end;
+
+function TDM.ListarQuestao: Boolean;
+begin
+  FDQuery1.Close;
+  FDQuery1.SQL.Clear;
+  FDQuery1.SQL.Add('SELECT * FROM QUESTAO');
+  FDQuery1.Open();
+  Result := True;
+end;
+
+function TDM.BuscarQuestao(idQuestao: Integer): Boolean;
 begin
   FDQuery1.Close;
   FDQuery1.SQL.Clear;

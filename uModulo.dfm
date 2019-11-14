@@ -5,9 +5,6 @@ object DM: TDM
   Width = 550
   object FDConnection1: TFDConnection
     Params.Strings = (
-      
-        'Database=C:\Users\Mois'#233's Lucas\Documents\Embarcadero\Studio\Proj' +
-        'ects\ODA\Win32\Debug\DB.db'
       'DriverID=sQLite')
     LoginPrompt = False
     Left = 416
@@ -19,5 +16,12 @@ object DM: TDM
       'select * from QUESTAO')
     Left = 176
     Top = 128
+  end
+  object FDQuery2: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'select * from QUESTAO')
+    Left = 96
+    Top = 176
   end
 end

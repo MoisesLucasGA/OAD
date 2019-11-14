@@ -2,25 +2,31 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2019/09/22 19:10:03.000.780,=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2019/09/22 19:11:26.000.337,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\Unit2.dfm=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\uMain.dfm</Transaction>
-    <Transaction>2019/09/22 19:11:26.000.337,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\uMain.pas</Transaction>
-    <Transaction>2019/09/22 19:11:51.000.676,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\ODA.dproj</Transaction>
+    <Transaction>2019/09/22 19:11:26.000.337,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\uMain.dfm=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>2019/09/22 19:11:26.000.337,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\uMain.pas=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2019/09/22 19:11:51.000.676,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\ODA.dproj=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
     <Transaction>2019/09/23 08:39:16.000.027,=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.pas</Transaction>
     <Transaction>2019/09/23 08:39:54.000.478,=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.pas</Transaction>
-    <Transaction>2019/09/23 08:44:22.000.086,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uDataModule.pas=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.pas</Transaction>
-    <Transaction>2019/09/23 08:44:22.000.086,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uDataModule.dfm=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.dfm</Transaction>
+    <Transaction>2019/09/23 08:44:22.000.086,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.dfm=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uDataModule.dfm</Transaction>
+    <Transaction>2019/09/23 08:44:22.000.086,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.pas=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uDataModule.pas</Transaction>
     <Transaction>2019/09/23 08:54:08.000.214,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\uMain.pas=</Transaction>
     <Transaction>2019/09/23 08:55:12.000.199,=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit2.pas</Transaction>
-    <Transaction>2019/09/23 08:55:41.000.668,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit2.pas=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uMain.pas</Transaction>
-    <Transaction>2019/09/23 08:55:41.000.668,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit2.dfm=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uMain.dfm</Transaction>
+    <Transaction>2019/09/23 08:55:41.000.668,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uMain.dfm=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit2.dfm</Transaction>
+    <Transaction>2019/09/23 08:55:41.000.668,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uMain.pas=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit2.pas</Transaction>
     <Transaction>2019/09/23 10:13:04.000.702,=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.pas</Transaction>
     <Transaction>2019/09/23 10:14:20.000.851,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uDataModule.pas=</Transaction>
-    <Transaction>2019/09/23 10:14:48.000.630,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.pas=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uModulo.pas</Transaction>
-    <Transaction>2019/09/23 10:14:48.000.630,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.dfm=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uModulo.dfm</Transaction>
+    <Transaction>2019/09/23 10:14:48.000.630,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uModulo.pas=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.pas</Transaction>
+    <Transaction>2019/09/23 10:14:48.000.630,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uModulo.dfm=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.dfm</Transaction>
     <Transaction>2019/09/24 18:40:33.000.932,=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.pas</Transaction>
     <Transaction>2019/09/24 18:40:49.000.286,=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.pas</Transaction>
-    <Transaction>2019/09/24 18:42:19.000.441,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uQuiz.dfm=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.dfm</Transaction>
-    <Transaction>2019/09/24 18:42:19.000.441,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uQuiz.pas=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.pas</Transaction>
+    <Transaction>2019/09/24 18:42:19.000.441,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.pas=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uQuiz.pas</Transaction>
+    <Transaction>2019/09/24 18:42:19.000.441,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.dfm=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uQuiz.dfm</Transaction>
+    <Transaction>2019/11/08 17:33:11.000.928,=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.pas</Transaction>
+    <Transaction>2019/11/08 17:37:20.000.046,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uScore.pas=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.pas</Transaction>
+    <Transaction>2019/11/08 17:37:20.000.046,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uScore.dfm=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.dfm</Transaction>
+    <Transaction>2019/11/10 16:32:01.000.245,=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.pas</Transaction>
+    <Transaction>2019/11/10 18:24:43.000.722,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uGerencia.pas=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.pas</Transaction>
+    <Transaction>2019/11/10 18:24:43.000.722,C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\uGerencia.dfm=C:\Users\Moisés Lucas\Documents\Embarcadero\Studio\Projects\ODA\Unit1.dfm</Transaction>
   </Transactions>
 	<ProjectSortOrder AutoSort="0" SortType="0">
     <File Path="uMain.pas"/>
@@ -29,5 +35,10 @@
     <File Path="uModulo.dfm"/>
     <File Path="uQuiz.pas"/>
     <File Path="uQuiz.dfm"/>
-  </ProjectSortOrder>  <BT_BuildType>Debug</BT_BuildType>
+    <File Path="uScore.pas"/>
+    <File Path="uScore.dfm"/>
+    <File Path="uGerencia.pas"/>
+    <File Path="uGerencia.dfm"/>
+  </ProjectSortOrder>
+	<BT_BuildType>Debug</BT_BuildType>
 </BorlandProject>

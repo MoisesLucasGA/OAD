@@ -27,8 +27,6 @@ object frmQuiz: TfrmQuiz
     Height = 623
     Align = alClient
     TabOrder = 0
-    ExplicitWidth = 900
-    ExplicitHeight = 613
     object pnlQuiz: TPanel
       Left = 16
       Top = 1

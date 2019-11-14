@@ -42,15 +42,19 @@ type
     { Public declarations }
     idQuestao: Integer;
     qtdQuestao: Integer;
+    resposta : string;
   end;
 
 var
   frmQuiz: TfrmQuiz;
+  TempoInicio: TTime;
+  TempoFim: TTime;
 
 
 implementation
 
 {$R *.dfm}
+uses uMain;
 
 procedure TfrmQuiz.Acertou;
 begin
@@ -75,8 +79,6 @@ begin
 end;
 
 procedure TfrmQuiz.btnConfirmarClick(Sender: TObject);
-var
-  resposta : string;
 begin
   if (rBtnA.Checked = false) and (rBtnB.Checked = false) and (rBtnC.Checked = false) and (rBtnD.Checked = false) then
     begin
@@ -85,11 +87,6 @@ begin
   else
     begin
     // VERIFICAR RESPOSTA
-      if DM.Conectar then
-      begin
-        dm.ListarQuestao(idQuestao);
-        resposta := DM.FDQuery1.FieldByName('resposta').AsString;
-        DM.Desconectar;
         //BUTTON A SELECIONADO
         if(rBtnA.Checked = true) then
           begin
@@ -129,7 +126,6 @@ begin
             else
               ShowMessage('Tente novamente');
       end;
-    end;
 
 end;
 
@@ -138,18 +134,23 @@ begin
   if idQuestao = qtdQuestao then
   begin
     ShowMessage('Parabéns você terminou!!!');
-  end;
-  if idQuestao < qtdQuestao then
+    TempoFim := GetTime;
+    if DM.Conectar then
+    begin
+      DM.InserirScore(frmPrincipal.idUsuario,TempoInicio-TempoFim);
+      DM.Desconectar;
+      frmQuiz.Hide;
+      Resetar;
+    end;
+
+  end
+  else if idQuestao < qtdQuestao then
   begin
     Inc(idQuestao);
     Acertou;
     GerarQuestao;
   end;
-  if (idQuestao < qtdQuestao) and (idQuestao >= 13)  then
-    begin
-      Formatar;
-    end;
-    tbQuestao1.Caption := 'Questão ' + idQuestao.ToString;
+  tbQuestao1.Caption := 'Questão ' + idQuestao.ToString;
 end;
 
 procedure TfrmQuiz.btnSairClick(Sender: TObject);
@@ -162,25 +163,12 @@ procedure TfrmQuiz.Centralizar;
 begin
   pnlQuiz.Height := self.Height - 50;
   pnlQuiz.Left := (self.Width div 2) - (pnlQuiz.Width div 2);
-  if idQuestao < 14 then
-  begin
     imgTira.Height := (pnlQuiz.Height div 2) + 20;
     pnlItems.Height := (self.Height div 2) - 60;
-  end
-  else
-  begin
-    imgTira.Width := (pnlQuiz.Width div 2);
-
-    pnlItems.Width := (pnlQuiz.Width div 2) - 10;
-  end;
-
-
 end;
 
 procedure TfrmQuiz.Formatar;
 begin
-  if idQuestao < 14 then
-  begin
     imgTira.Align := TAlign.alCustom;
     imgTira.Height := 336;
     imgTira.Width := 713;
@@ -236,38 +224,7 @@ begin
     btnConfirmar.Width := 75;
     btnConfirmar.Top := 180;
     btnConfirmar.Left := 701;
-
-  end
-  else
-  begin
-    imgTira.Align := TAlign.alLeft;
-    imgTira.Proportional := true;
-
-    pnlItems.Align := TAlign.alRight;
-
-    lblEnunciado.Align := TAlign.alTop;
-    lblEnunciado.AlignWithMargins := true;
-
-    rBtnA.Align := TAlign.alTop;
-    rBtnA.AlignWithMargins := true;
-    rBtnB.Align := TAlign.alTop;
-    rBtnB.AlignWithMargins := true;
-    rBtnC.Align := TAlign.alTop;
-    rBtnC.AlignWithMargins := true;
-    rBtnD.Align := TAlign.alTop;
-    rBtnD.AlignWithMargins := true;
-
-    btnSair.Align := TAlign.alBottom;
-    btnSair.AlignWithMargins := true;
-
-    btnProximo.Align := TAlign.alBottom;
-    btnProximo.AlignWithMargins := true;
-
-    btnConfirmar.Align := TAlign.alBottom;
-    btnConfirmar.AlignWithMargins := true;
-
-    Centralizar;
-  end;
+  Centralizar;
 end;
 
 procedure TfrmQuiz.FormCanResize(Sender: TObject; var NewWidth,
@@ -279,31 +236,27 @@ end;
 procedure TfrmQuiz.FormCreate(Sender: TObject);
 begin
 Resetar;
-if DM.Conectar then
-  begin
-    qtdQuestao := DM.QtdQuestao;
-  end;
-  DM.Desconectar;
-
 btnProximo.Enabled := false;
 end;
 
 procedure TfrmQuiz.FormShow(Sender: TObject);
 begin
+if DM.Conectar then
+  begin
+    qtdQuestao := DM.QtdQuestao;
+  end;
+  DM.Desconectar;
+TempoInicio := GetTime;
 Formatar;
 GerarQuestao;
 end;
 
 procedure TfrmQuiz.GerarItems;
 var
-  item : array[0..3] of string;
   j : Integer;
 
 begin
-  item[0] := dm.FDQuery1.FieldByName('item1').AsString;
-  item[1] := dm.FDQuery1.FieldByName('item2').AsString;
-  item[2] := dm.FDQuery1.FieldByName('item3').AsString;
-  item[3] := dm.FDQuery1.FieldByName('resposta').AsString;
+
 
   j := Random(4);
   if j=0 then
@@ -337,13 +290,20 @@ begin
 end;
 
 procedure TfrmQuiz.GerarQuestao;
+var
+i : Integer;
 begin
   if DM.Conectar then
     begin
-      DM.ListarQuestao(idQuestao);
+      DM.ListarQuestao;
       DM.FDQuery1.First;
+      for i := 1 to idQuestao-1 do
+      begin
+        DM.FDQuery1.Next;
+      end;
       imgTira.Picture.LoadFromFile(DM.FDQuery1.FieldByName('foto').AsString);
       lblEnunciado.Caption :=  idQuestao.ToString+') '+DM.FDQuery1.FieldByName('enunciado').AsString;
+      resposta := DM.FDQuery1.FieldByName('resposta').AsString;
       GerarItems;
     end;
     DM.Desconectar;
@@ -351,6 +311,12 @@ end;
 
 procedure TfrmQuiz.Resetar;
 begin
+if DM.Conectar then
+  begin
+    qtdQuestao := DM.QtdQuestao;
+  end;
+  DM.Desconectar;
+
   idQuestao := 1;
   btnConfirmar.Enabled := true;
   btnProximo.Enabled := false;
