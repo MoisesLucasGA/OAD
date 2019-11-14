@@ -152,7 +152,6 @@ object frmGerencia: TfrmGerencia
     TabOrder = 8
   end
   object FDTable1: TFDTable
-    Active = True
     IndexFieldNames = 'id'
     Connection = FDConnection1
     UpdateOptions.UpdateTableName = 'QUESTAO'
@@ -198,12 +197,8 @@ object frmGerencia: TfrmGerencia
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
-      
-        'Database=C:\Users\Mois'#233's Lucas\Documents\Embarcadero\Studio\Proj' +
-        'ects\ODA\Win32\Debug\DB.db'
       'LockingMode=Normal'
       'DriverID=SQLite')
-    Connected = True
     LoginPrompt = False
     Left = 432
     Top = 456
